@@ -1,0 +1,8 @@
+sounddevice
+soundfile
+numpy
+transformers
+torch
+torchaudio
+pulsectl; platform_system=="Linux"
+pycaw; platform_system=="Windows"
