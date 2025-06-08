@@ -28,19 +28,19 @@ from transformers import pipeline # Import Hugging Face pipeline
 
 # Configuration
 SAMPLE_RATE = 16000
-DURATION = 1.5  # Seconds to record per chunk (reduced from 3, adjust as needed)
-SILENCE_THRESHOLD = 0.005 # RMS threshold for silence detection (adjust as needed)
+DURATION = 2  # Seconds to record per chunk (increased from 1, adjust as needed)
+SILENCE_THRESHOLD = 0.005 # RMS threshold for silence detection (increased from 0.001, adjust as needed)
 
 # Trigger phrases
-TRIGGER_PHRASES = ["звука бы", "тих тих тих", "шумно"]  # Trigger phrases in Russian
-REVERSE_TRIGGER_PHRASES = ["неважно", "всё нормально"]  # Reverse trigger phrases in Russian
+TRIGGER_PHRASES = ["звукабы", "тих тих тих", "шумно"]  # Trigger phrases in Russian
+REVERSE_TRIGGER_PHRASES = ["неважно", "всё нормально", "не важно"]  # Reverse trigger phrases in Russian
 TRIGGER_PHRASE_LANGUAGE = "russian"  # Language for Hugging Face Whisper (e.g., "english", "russian")
 
 # Application volume control settings
 # For Linux, these names should match 'application.name' or 'application.process.binary'
 # from `pactl list sink-inputs`. Examples: "Spotify", "Firefox", "discord"
-APPS_TO_LOWER_VOLUME = ["discord"]  # Adjust for Linux, e.g., "discord"
-APPS_TO_MUTE = ["spotify"]          # Adjust for Linux, e.g., "spotify"
+APPS_TO_LOWER_VOLUME = ["Discord.exe"]  # Adjust for Linux, e.g., "discord"
+APPS_TO_MUTE = ["Spotify.exe"]          # Adjust for Linux, e.g., "spotify"
 LOWERED_VOLUME_LEVEL = 0.3
 MUTED_VOLUME_LEVEL = 0.0
 
@@ -100,7 +100,7 @@ def process_audio():
       
       # Silence detection: Calculate RMS of the audio chunk
       rms = np.sqrt(np.mean(audio_np**2))
-      
+      print(f"RMS: {rms:.4f} (Threshold: {SILENCE_THRESHOLD})")
       if rms < SILENCE_THRESHOLD:
         # print(f"Silence detected (RMS: {rms:.4f}), skipping ASR.")
         continue # Skip ASR for this chunk
