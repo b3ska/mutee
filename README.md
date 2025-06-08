@@ -34,11 +34,11 @@ Welcome to Mutee, the application that listens to your voice and adjusts your au
    venv\Scripts\activate
    ```
 
-5. **Install Dependencies**: Now, it’s time to install the required packages. Run:
+5. **Install Dependencies and FFmpeg**: Now, it’s time to install the required packages. Run:
    ```
    pip install -r requirements.txt
+   winget install "FFmpeg (Essentials Build)"
    ```
-   If you see any errors, just pretend you didn’t and move on. (Just kidding, fix them!)
 
 6. **Run the Application**: Finally, you can start Mutee by running:
    ```
