@@ -1,5 +1,3 @@
-# README.md
-
 # Mutee: The Volume Whisperer
 
 Welcome to Mutee, the application that listens to your voice and adjusts your audio levels like a personal DJ who’s had one too many cups of coffee! Tired of shouting at your computer to lower the volume? Well, now you can just say a few magic words, and voilà! Your wish is Mutee's command.
