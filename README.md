@@ -16,9 +16,9 @@ Welcome to Mutee, the application that listens to your voice and adjusts your au
 
 2. **Clone the Repository**: Open your command prompt (you can search for `cmd` in the Start menu) and run:
    ```
-   git clone https://github.com/yourusername/mutee.git
+   git clone https://github.com/b3ska/mutee.git
    ```
-   (Replace `yourusername` with your actual GitHub username, or just download the ZIP file if you prefer the old-school way.)
+   (or just download the ZIP file if you prefer the old-school way.)
 
 3. **Navigate to the Project Directory**: Change your directory to the cloned repository:
    ```
